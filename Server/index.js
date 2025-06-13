@@ -27,8 +27,10 @@ app.use('/api/dealer', dealerRoutes);
 app.use('/api/reviews', reviewRoutes);
 
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => app.listen(5000, () => console.log('Server running on port 5000')))
+  .then(() => app.listen(5000, () => 
+  {
+    console.log('Server running on port 5000')
+  console.log("Database Connected Successfully")
+}))
 
   .catch(err => console.error(err));
-
-    console.log("Database Connected Successfully")
